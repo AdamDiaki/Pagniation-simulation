@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.PaginaController">
+   <children>
+      <GridPane maxHeight="250.0" maxWidth="-Infinity" minHeight="200.0" minWidth="1080.0" prefHeight="400.0" prefWidth="688.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Pagina" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <CheckBox fx:id="fifoCb" mnemonicParsing="false" text="FIFO" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <CheckBox fx:id="lruCb" mnemonicParsing="false" text="LRU" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <CheckBox fx:id="lfuCb" mnemonicParsing="false" text="LFU" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Algorithme de pagination : " GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label contentDisplay="RIGHT" text="Nombre de processus : " GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Label>
+            <ChoiceBox fx:id="nbrProcessChoiceB" prefHeight="27.0" prefWidth="43.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="Page générées en mode :" textAlignment="RIGHT" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <CheckBox fx:id="aleaCb" mnemonicParsing="false" text="Aléatoire" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <CheckBox fx:id="manuelCb" mnemonicParsing="false" text="Manuel" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <Label text="Référence maximale d'une page : " GridPane.columnIndex="4" GridPane.rowIndex="4" />
+            <Button fx:id="genBtn" contentDisplay="CENTER" mnemonicParsing="false" text="Générer" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+            <Button fx:id="resetBtn" mnemonicParsing="false" text="Reset" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+            <ChoiceBox fx:id="refMaxCb" prefHeight="27.0" prefWidth="44.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+            <Label fx:id="formLB" text="Remplisser les processus :" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <ChoiceBox fx:id="nbrChaineRefCB" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <Label text="Nombre de case mémoire :" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+            <ChoiceBox fx:id="caseMemoireCB" prefHeight="27.0" prefWidth="43.0" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="176.78167724609375" minWidth="10.0" prefWidth="23.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="212.0" minWidth="0.0" prefWidth="211.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="91.0" minWidth="10.0" prefWidth="44.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="231.66033935546875" minWidth="10.0" prefWidth="123.04580688476562" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="256.9541931152344" minWidth="10.0" prefWidth="206.9515380859375" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.27227783203125" minWidth="10.0" prefWidth="103.0484619140625" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="311.10516357421875" minWidth="10.0" prefWidth="311.10516357421875" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <VBox prefHeight="421.0" prefWidth="1080.0">
+         <children>
+            <GridPane fx:id="formGP" maxWidth="900.0">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </GridPane>
+            <Button fx:id="addProcessusBtn" layoutX="950.0" mnemonicParsing="false" text="Valider" translateX="950.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+            <GridPane fx:id="processusGP" prefHeight="30.0" prefWidth="1034.0">
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </GridPane>
+            <GridPane fx:id="resultPane" maxWidth="540.0" prefHeight="232.0" prefWidth="487.0">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="40.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </GridPane>
+         </children>
+      </VBox>
+   </children>
+</VBox>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.SimulaController">
+   <children>
+      <GridPane maxHeight="200.0" maxWidth="-Infinity" minHeight="200.0" minWidth="1080.0" prefHeight="450.0" prefWidth="688.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="SIMULA" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <CheckBox fx:id="sjfCB" mnemonicParsing="false" text="SJF" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <CheckBox fx:id="srftCB" mnemonicParsing="false" text="SRFT" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <CheckBox fx:id="rrCB" mnemonicParsing="false" text="RR" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Algorithme d'odonnancement : " GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label contentDisplay="RIGHT" text="Taille CPU : " GridPane.columnIndex="5" GridPane.rowIndex="1">
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Label>
+            <ChoiceBox fx:id="nbrProcessChoiceB" prefHeight="27.0" prefWidth="43.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="Génération des processus :" textAlignment="RIGHT" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <CheckBox fx:id="aleaCB" mnemonicParsing="false" text="Aléatoire" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+            <CheckBox fx:id="manuelCB" mnemonicParsing="false" text="Manuel" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+            <Button fx:id="genBtn" contentDisplay="CENTER" mnemonicParsing="false" text="Générer" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+            <Button fx:id="resetBtn" mnemonicParsing="false" text="Reset" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+            <CheckBox fx:id="pnpCB" mnemonicParsing="false" text="Priorité non préemptif" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <CheckBox fx:id="ppCB" mnemonicParsing="false" text="Priorité préemptif" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <CheckBox fx:id="lifoCB" mnemonicParsing="false" text="LIFO" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <CheckBox fx:id="fcfsCB" mnemonicParsing="false" text="FCFS" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label fx:id="quantumLabel" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="81.0" text="Quantum : " textAlignment="RIGHT" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+            <ChoiceBox fx:id="quantumCB" prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="176.78167724609375" minWidth="10.0" prefWidth="23.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="212.0" minWidth="0.0" prefWidth="211.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="91.0" minWidth="10.0" prefWidth="44.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="231.66033935546875" minWidth="10.0" prefWidth="173.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="231.66033935546875" minWidth="10.0" prefWidth="56.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="256.9541931152344" minWidth="10.0" prefWidth="186.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.27227783203125" minWidth="10.0" prefWidth="103.0484619140625" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="311.10516357421875" minWidth="10.0" prefWidth="311.10516357421875" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <VBox prefHeight="503.0" prefWidth="1080.0">
+         <children>
+            <TableView id="" fx:id="genProcessTV" layoutX="100.0" layoutY="80.0" maxHeight="200.0" maxWidth="420.0" prefHeight="200.0" prefWidth="420.0">
+              <columns>
+                  <TableColumn id="labelCol" fx:id="labelCol" maxWidth="150.0" prefWidth="100.0" text="Processus" />
+                  <TableColumn id="Col" fx:id="tempsExeCol" maxWidth="150.0" prefWidth="150.0" text="Temps Execution" />
+                  <TableColumn id="statutCol" fx:id="tempsArriCol" maxWidth="150.0" prefWidth="150.0" text="Temps Arrivé" />
+                  <TableColumn id="statutCol" fx:id="prioriteCol" maxWidth="150.0" prefWidth="150.0" text="Priorité" />
+              </columns>
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </TableView>
+            <Button fx:id="addProcessusBtn" layoutX="550.0" mnemonicParsing="false" text="Valider" translateX="380.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+            <TableView fx:id="resultatTV" maxWidth="420.0" prefHeight="200.0" prefWidth="392.0">
+              <columns>
+                <TableColumn fx:id="pidCol" prefWidth="75.0" text="pid" />
+                <TableColumn fx:id="nomCol" prefWidth="100.0" text="nom" />
+                  <TableColumn fx:id="tempsArrCol" prefWidth="100.0" text="Temps arrivé" />
+                  <TableColumn fx:id="tempsExecCol" prefWidth="100.0" text="Temps Exécution" />
+                  <TableColumn fx:id="prioCol" prefWidth="100.0" text="Priorité" />
+              </columns>
+               <VBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </VBox.margin>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</VBox>
